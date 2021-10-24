@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "client", "client.csproj", "{6F29F93D-2501-4D21-8214-00762A0463CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "packetData", "..\packetData\packetData.csproj", "{171B4234-2FE7-47FB-89C4-F0D6DD3E1648}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "server", "..\server\server.csproj", "{976399E2-5D10-47AD-8F73-C0E86BC2D1D0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F29F93D-2501-4D21-8214-00762A0463CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F29F93D-2501-4D21-8214-00762A0463CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F29F93D-2501-4D21-8214-00762A0463CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F29F93D-2501-4D21-8214-00762A0463CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{171B4234-2FE7-47FB-89C4-F0D6DD3E1648}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{171B4234-2FE7-47FB-89C4-F0D6DD3E1648}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{171B4234-2FE7-47FB-89C4-F0D6DD3E1648}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{171B4234-2FE7-47FB-89C4-F0D6DD3E1648}.Release|Any CPU.Build.0 = Release|Any CPU
+		{976399E2-5D10-47AD-8F73-C0E86BC2D1D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{976399E2-5D10-47AD-8F73-C0E86BC2D1D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{976399E2-5D10-47AD-8F73-C0E86BC2D1D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{976399E2-5D10-47AD-8F73-C0E86BC2D1D0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9A161BEC-6071-4EA1-8B4D-12F6E3A95960}
+	EndGlobalSection
+EndGlobal

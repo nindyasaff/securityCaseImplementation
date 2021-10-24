@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\NINDYASAFF\\Documents\\4210191025_SecurityCase\\client\\client.csproj",
-      "projectName": "client",
-      "projectPath": "C:\\Users\\NINDYASAFF\\Documents\\4210191025_SecurityCase\\client\\client.csproj",
+      "projectUniqueName": "C:\\Users\\NINDYASAFF\\Documents\\4210191025_SecurityCase\\packetData\\packetData.csproj",
+      "projectName": "packetData",
+      "projectPath": "C:\\Users\\NINDYASAFF\\Documents\\4210191025_SecurityCase\\packetData\\packetData.csproj",
       "packagesPath": "C:\\Users\\NINDYASAFF\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\NINDYASAFF\\Documents\\4210191025_SecurityCase\\client\\obj\\",
+      "outputPath": "C:\\Users\\NINDYASAFF\\Documents\\4210191025_SecurityCase\\packetData\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\NINDYASAFF\\AppData\\Roaming\\NuGet\\NuGet.Config",
