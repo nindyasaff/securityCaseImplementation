@@ -1,4 +1,4 @@
-﻿using Packetdata;
+﻿using packetData;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,7 +13,7 @@ namespace Client
         private TcpClient socket;
         private NetworkStream stream;
 
-        //assymetric key
+        // assymetric key
         private Encryption clientEncryption = new Encryption();
 
         string serverPublicKeyPath = Directory.GetCurrentDirectory() + "\\server-public-key.txt";
@@ -23,13 +23,13 @@ namespace Client
         private AesEncryptor symmetricEncryptor = new AesEncryptor();
 
         // ketika klien siap mengirim pesan
-        public bool isReadyToSendMassage = false;
+        public bool isReadyToSendMessage = false;
 
         public Client()
         {
-            isReadyToSendMassage = false;
+            isReadyToSendMessage = false;
 
-            //load server public key
+            // load server public key
             LoadServerPublicKey();
         }
 
@@ -38,7 +38,7 @@ namespace Client
             if (File.Exists(serverPublicKeyPath))
             {
                 string serverPublicKeyloaded = File.ReadAllText(serverPublicKeyPath);
-                serverEncryption.publicKey - serverEncryption.ConvertStringToKey(serverPublicKeyLoaded);
+                serverEncryption.publicKey = serverEncryption.ConvertStringToKey(serverPublicKeyLoaded);
             }
         }
 
@@ -50,11 +50,11 @@ namespace Client
                 socket = new TcpClient(ip, port);
 
                 stream = socket.GetStream();
-                Console.WriteLine("Connected to server . . .");
+                Console.WriteLine("Connected to server...");
 
                 stream.BeginRead(Constant.dataBuffer, 0, Constant.dataBuffer.Length, ReceiveData, null);
 
-                //generate client key
+                // generate client key
                 clientEncryption.GenerateKey();
 
                 // send client public key to server
@@ -91,7 +91,7 @@ namespace Client
             catch (Exception _ex)
             {
                 Console.WriteLine($"Error receiving TCP data: {_ex}");
-                //disconnected
+                // disconnected
             }
         }
 
@@ -100,7 +100,7 @@ namespace Client
             byte[] buffer = data;
             int readPos = 0;
 
-            int packetType = BitConverter.ToInt32(buffer, readPos);
+            int packetType = BitConverter.ToInt32(buffer, redPos);
             readPos += 4;
 
             // get message
@@ -109,17 +109,17 @@ namespace Client
 
             switch (packetType)
             {
-                case (int)packetType.SEND_SYMMETRIC_KEY:
+                case (int)Packet.SEND_SYMMETRIC_KEY:
                     // read message (encrypted client public key)
                     string keyString = Encoding.ASCII.GetString(messageData);
                     // decrypt with private server key
                     string decrypted = clientEncryption.Decrypt(keyString);
                     Console.WriteLine($"{decrypted}");
                     symmetricEncryptor.SetKey(Convert.FromBase64String(decrypted));
-                    isReadyToSendMassage = true;
-                    SendMessage("hello from client!");
+                    isReadyToSendMessage = true;
+                    SendMessage("Hello from client!");
                     break;
-                case (int)packetType.SEND_MESSAGE:
+                case (int)Packet.SEND_MESSAGE:
                     string message = Encoding.ASCII.GetString(messageData, 0, messageData.Length);
                     string decryptedMsg = symmetricEncryptor.Decrypt(message);
                     Console.WriteLine($"Message from server: {decryptedMsg}");
